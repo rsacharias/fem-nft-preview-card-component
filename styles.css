@@ -11,6 +11,14 @@
   --fw3: 600;
 }
 
+/* || GENERAL STYLES */
+
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 html {
   font-size: 16px;
 }
@@ -19,28 +27,47 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
   height: 100vh;
   background-color: var(--bg-body-clr);
   font-family: var(--ff);
+  line-height: 1.5;
   color: var(--text-clr-white);
 }
 
 h1 {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: var(--fw3);
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1.0rem;
   font-weight: var(--fw1);
-  line-height: 1.5em;
 }
 
-.card {
+h1, p {
+  margin: 10px 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* || UTILITIES */ 
+
+.flex-row, .flex-col {
   display: flex;
+}
+
+.flex-col {
   flex-direction: column;
-  width: 300px;
+}
+
+
+/* || MODULES / COMPONENTS */
+
+.card {
+  max-width: 333px;
   padding: 1.5em;
   border-radius: 15px;
   background-color: var(--bg-card-clr);
@@ -54,30 +81,24 @@ p {
 
 .content {
   border-bottom: 2px solid var(--line-clr);
-  margin-bottom: 6px;
-}
-
-.content > p {
-  margin-bottom: 0;
+  margin-bottom: 0.5em;
 }
 
 .assets, .card-footer {
-  display: flex;
   justify-content: space-between;
 }
 
-.assets > p, .card-footer > p {
-  font-size: 1.0rem;
+.assets {
+  margin: 0.5em 0;
 }
 
 .assets p:not(.soft-blue-text) {
   font-weight: var(--fw3);
 }
 
-
 .assets .icon {
-  position: relative; /* to get the icons on the baseline without using flex again */
-  top: 3px;
+  display: inline;
+  vertical-align: text-bottom;
   margin-right: 0.5em;
 }
 
@@ -86,13 +107,10 @@ p {
   align-items: center;
 }
 
-.card-footer p {
-  margin-left: 1em;
-}
-
 .avatar {
   border: 1px white solid;
   border-radius: 50%;
+  margin-right: 1em;
 }
 
 .soft-blue-text {
